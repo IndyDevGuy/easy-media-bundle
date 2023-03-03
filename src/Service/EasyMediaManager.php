@@ -18,6 +18,7 @@ use Illuminate\Support\Str;
 use League\Flysystem\FilesystemException;
 use League\Flysystem\FilesystemOperator;
 use League\Flysystem\Local\LocalFilesystemAdapter;
+use League\Flysystem\Filesystem;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface;
@@ -34,7 +35,7 @@ class EasyMediaManager
                                 protected ContainerBagInterface $parameters,
                                 protected TranslatorInterface $translator
     ) {
-        $this->filesystem = new League\Flysystem\Filesystem($adapter);
+        $this->filesystem = new Filesystem($adapter);
     }
 
     public function getFilesystem(): FilesystemOperator
