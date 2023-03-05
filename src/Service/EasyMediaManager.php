@@ -29,6 +29,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class EasyMediaManager
 {
+    protected $filesystem;
     public function __construct(LocalFilesystemAdapter $adapter,
                                 protected EasyMediaHelper $helper,
                                 public EntityManagerInterface $em,
