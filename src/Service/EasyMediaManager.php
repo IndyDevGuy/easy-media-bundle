@@ -17,7 +17,7 @@ use Embed\Embed;
 use Illuminate\Support\Str;
 use League\Flysystem\FilesystemException;
 use League\Flysystem\FilesystemOperator;
-use League\Flysystem\Local\LocalFilesystemAdapter;
+use League\Flysystem\FilesystemAdapter;
 use League\Flysystem\Filesystem;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
@@ -30,7 +30,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class EasyMediaManager
 {
     protected $filesystem;
-    public function __construct(LocalFilesystemAdapter $adapter,
+    public function __construct(FilesystemAdapter $adapter,
                                 protected EasyMediaHelper $helper,
                                 public EntityManagerInterface $em,
                                 protected ContainerBagInterface $parameters,
